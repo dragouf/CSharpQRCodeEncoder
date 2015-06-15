@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6506F47-594E-46C0-AF69-58D49996EEBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QRCodeEncoder</RootNamespace>
+    <AssemblyName>QRCodeEncoder</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\BitArray.cs" />
+    <Compile Include="common\BitMatrix.cs" />
+    <Compile Include="common\CharacterSetECI.cs" />
+    <Compile Include="common\ECI.cs" />
+    <Compile Include="encoder\BlockPair.cs" />
+    <Compile Include="encoder\ByteMatrix.cs" />
+    <Compile Include="EncodeHintType.cs" />
+    <Compile Include="encoder\Encoder.cs" />
+    <Compile Include="encoder\ErrorCorrectionLevel.cs" />
+    <Compile Include="encoder\MaskUtil.cs" />
+    <Compile Include="encoder\MatrixUtil.cs" />
+    <Compile Include="encoder\Mode.cs" />
+    <Compile Include="encoder\QRCode.cs" />
+    <Compile Include="encoder\QrCodeEncodingOptions.cs" />
+    <Compile Include="encoder\Version.cs" />
+    <Compile Include="common\EncodingOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRCodeWriter.cs" />
+    <Compile Include="reedsolomon\GenericGF.cs" />
+    <Compile Include="reedsolomon\GenericGFPoly.cs" />
+    <Compile Include="reedsolomon\ReedSolomonDecoder.cs" />
+    <Compile Include="reedsolomon\ReedSolomonEncoder.cs" />
+    <Compile Include="render\BarcodeWriter.cs" />
+    <Compile Include="render\BarcodeWriterGeneric.cs" />
+    <Compile Include="render\BitmapRenderer.cs" />
+    <Compile Include="render\IBarcodeRenderer.cs" />
+    <Compile Include="render\IBarcodeWriter.cs" />
+    <Compile Include="render\IBarcodeWriterGeneric.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
