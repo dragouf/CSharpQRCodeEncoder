@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QRCodeUI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -21,11 +21,11 @@ namespace QRCodeUI
         {
             var t = new ZXing.QrCode.QRCodeWriter();
             var options = new Dictionary<ZXing.EncodeHintType, object> { 
-                { ZXing.EncodeHintType.CHARACTER_SET, "utf8" },
-                { ZXing.EncodeHintType.ERROR_CORRECTION, "" },
-                { ZXing.EncodeHintType.DISABLE_ECI, false }
+                //{ ZXing.EncodeHintType.CHARACTER_SET, "utf8" },
+                //{ ZXing.EncodeHintType.ERROR_CORRECTION, "" },
+                //{ ZXing.EncodeHintType.DISABLE_ECI, false }
             };
-            var matrix = t.encode(textBox1.Text, 100, 100, options);
+            var matrix = t.encode(textBox1.Text, 450, 450, options);
 
             this.pictureBox1.Image = t.ToBitmap(matrix);
 

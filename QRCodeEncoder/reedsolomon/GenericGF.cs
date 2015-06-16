@@ -57,9 +57,9 @@ namespace ZXing.Common.ReedSolomon
       /// *  In most cases it should be 1, but for QR code it is 0.</param>
       public GenericGF(int primitive, int size, int genBase)
       {
-         this.primitive = primitive;
-         this.size = size;
-         this.generatorBase = genBase;
+         this.primitive = primitive; // 285
+         this.size = size; // 256
+         this.generatorBase = genBase; // 0
 
          expTable = new int[size];
          logTable = new int[size];
